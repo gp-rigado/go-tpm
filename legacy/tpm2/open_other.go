@@ -51,7 +51,7 @@ func OpenTPM(path ...string) (tpm io.ReadWriteCloser, err error) {
 	_, err = GetManufacturer(tpm)
 	if err != nil {
 		tpm.Close()
-		return nil, fmt.Errorf("open %s: device is not a TPM 2.0", path)
+		return nil, fmt.Errorf("open %s: device is not a TPM 2.0 - %v", path,err)
 	}
 	return tpm, nil
 }

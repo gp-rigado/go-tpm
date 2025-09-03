@@ -21,7 +21,6 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"log"
 	"github.com/google/go-tpm/tpmutil"
 )
 
@@ -45,10 +44,6 @@ func OpenTPM(path ...string) (tpm io.ReadWriteCloser, err error) {
 	}
 	if err != nil {
 		return nil, err
-	}
-
-	if err := Startup(tpm, StartupClear); err != nil {
-		log.Printf("StartupClear seems to have failed: %v",err)
 	}
 
 	// Make sure this is a TPM 2.0

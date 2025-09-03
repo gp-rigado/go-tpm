@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"io"
 	"os"
-
+	"log"
 	"github.com/google/go-tpm/tpmutil"
 )
 
